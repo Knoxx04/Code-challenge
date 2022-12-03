@@ -1,32 +1,34 @@
-let grade = prompt("Please enter your grade");
 
 
-function gradeGenerator(grade){
 
-    if(grade >= 79 && grade <= 100){
-        return "GRADE IS A"
-    }
+  function grade (){
 
-    else if(grade >= 60 && grade < 79){
-        return "GRADE IS B"
-    }
-
-    else if(grade >= 49 && grade < 60){
-        return "GRADE IS C"
-    }
-
-    else if(grade >= 40 && grade < 50){
-        return "GRADE IS D"
-    }
-
-    else if(grade < 40){
-        return "GRADE IS E"
-    }
-
-    else{
-        return "NOT APPLICABLE"
+    
+      
+        
+        if(grade >= 79 && grade <= 100){
+        console.log ("Grade is A");
     }
     
-}
+       else if (grade >= 59 && grade <= 79){
+       console.log ("Grade is B");
+     }
 
-conslole.log(gradeGenerator(60))
+     else if ( grade <= 59 && grade > 49){
+     console.log ("Grade is C");
+  }
+
+     else if (grade <= 49 && grade > 39){
+     console.log ("Grade is D");
+  }
+
+     else if (grade < 39){
+     console.log ("Grade is E");
+  } 
+  else {
+      console.log ("please enter a valid number")
+  }
+      
+}
+  
+console.log(grade(12));

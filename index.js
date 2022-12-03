@@ -1,87 +1,115 @@
+// CHALLENGE 1
+//This function seeks to check students grades
+//0 being the least and 100 being the maximum
 
- 
-const mayWeather = document.getElementById("mayWeather")
-function formReset(){
-    document.getElementById("marks").reset();
+function grade (){
+
+    
+      
+        
+    if(grade > 80 && grade <= 100){
+    console.log("Grade is A") 
+    
 }
 
-mayWeather.addEventListener("click", function(event){
-    event.preventDefault();
+   else if (grade > 60 && grade < 80){
+   console.log ("Grade is B");
+ }
 
-    var grade = document.getElementById("floyd").value;
+ else if ( grade > 50 && grade < 60){
+ console.log ("Grade is C");
+}
 
-    const result = document.getElementById("result");
+ else if (grade > 40 && grade < 50){
+ console.log ("Grade is D");
+}
 
-    console.log(grade);
-    
-    if(grade >= 79 && grade <= 100){
-                result.innerHTML = "GRADE IS A"
-            }
-        
-            else if(grade >= 60 && grade < 79){
-                return "GRADE IS B"
-            }
-        
-            else if(grade >= 49 && grade < 60){
-                return "GRADE IS C"
-            }
-        
-            else if(grade >= 40 && grade < 50){
-                return "GRADE IS D"
-            }
-        
-            else if(grade < 40){
-                return "GRADE IS E"
-            }
-        
-            else{
-                return "NOT APPLICABLE"
+ else if (grade < 39){
+ console.log ("Grade is E");
+} 
+else {
+   ("please enter a valid number")
+   
+}
+  
+}
+
+console.log((150));
+
+
+ 
+
+
+
+
+// speedDetectorChallenge2
+//The purpose of the function is to check speed limit
+//and accord whether speed limit is ok and demerit points for overspeeding
+
+
+ 
+function speedDetector(speed){
+
+    if(speed <= 70){
+        console.log("ok")
     }
-    formReset();
-            
-        
+
+    else if(speed > 70 && speed <= 130){
+        let demeritPoint = (speed-70)/5;
+        console.log(`points: ${demeritPoint}`);
+
+        }
+
+    else{
+        console.log("license suspended");
+    }
+
+}
+
+
+speedDetector(150);
 
 
 
-    
-})
-        
+//CHALLENGE 3 NET SALARY CALCULATOR
+// Function to calculate Net salary
+//This function calculates Net salary from gross salary
 
 
 
+function netSalaryCalculator(gs){
+  
+    if(gs >=0 && gs <= 10000){
+        console.log (10/100 * gs)
+    }
 
-// const speed = document.getElementById("speed");
+    else if(gs >= 10000 && gs< 20000){
+        console.log (12/100 * gs)
+    }
 
-// function formReseting(){
-//     document.getElementById("myForm").reset();
-// }
+    else if(gs >= 20000 && gs < 40000 ){
+        console.log (14/100 * gs)
+    }
 
+    else if(gs >= 40000 && gs < 60000){
+        console.log (18/100 * gs)
+    }
 
-// speed.addEventListener("click", function (e){
-//     e.preventDefault();
-//     var speedDriven = document.getElementById("speedDriven").value;
-//     const speedLimit = 70;
-//     const detector = document.getElementById("detector");
+    else if(gs >= 60000 && gs < 80000){
+        console.log (20/100 * gs)
+    }
 
-//     console.log(speedDriven);
-//     console.log(speedLimit);
+    else if(gs >= 80000 && gs < 100000){
+        console.log (22/100 * gs)
+    }
 
-//     let demerit = (speedDriven -speedLimit)/5;
-//     console.log(demerit);
-//     if(speedDriven < 70){
-//         detector.innerHTML = "OK";
-//     }else if(speedDriven > speedLimit && demerit <= 12){
-//         detector.innerHTML = demerit;
-//     }else if(demerit > 12){
-//         detector.innerHTML = "License Suspended";
-//     }
+    else{
+        console.log (25/100 * gs)
+    }
 
+}
 
-//     formReseting();
-// });
-
-
-
+netSalaryCalculator(5000);
 
 
 

@@ -26,8 +26,8 @@ Write a program whose major task is to calculate an individual’s Net Salary by
 2. git clone git@github.com:Knoxx04/Code-challenge.git
 3. cd Code-challenge
 4. code or atom depending on your text editor
-5. to access challenge1 open gradeGenerator.js
-6. to access challenge2 open speedDetector.js
+5. to access solutions to the challenges open index.js on your text editor
+6. Run the solutions in the debugging console
 
 
 
