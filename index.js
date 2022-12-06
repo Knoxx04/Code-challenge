@@ -1,116 +1,73 @@
-// CHALLENGE 1
-//This function seeks to check students grades
-//0 being the least and 100 being the maximum
+//Challenge 3: Net Salary Calculator (Toy Problem).
+/*This challenge involves creating a program that allows basic salary and benefits and adds them to get gross salary, 
+then calculates PAYE,NSSF and NHIF then deducts them from gross salary to get net salary.*/
 
-function grade (){
+//This code allows the user to input basic salary and benefits.
+const prompt = require("prompt-sync")();
+let basicSalary = parseInt(prompt("Enter the basic salary: "));
+let benefits = parseInt(prompt("Enter your benefits: "));
 
-    
-      
-        
-    if(grade > 80 && grade <= 100){
-    console.log("Grade is A") 
-    
-}
+//This function calculates and prints NHIF, NSSF, and PAYE deductions and subtracts them from gross salary to output net salary.
+function netSalaryCalculator() {
+    let grossSalary = basicSalary + benefits;
+    const personalRelief = 2400;
+//calculates NHIF deductions.
+    let NHIFDeductions;
+    if(grossSalary >= 0 && grossSalary <= 5999){(NHIF = 150);}
+    else if(grossSalary > 5999 && grossSalary <= 7999){(NHIFDeductions = 30);}
+    else if(grossSalary > 7999 && grossSalary <= 11999){(NHIFDeductions = 400);}
+    else if(grossSalary > 11999 && grossSalary <= 14999){(NHIFDeductions = 500);}
+    else if(grossSalary > 14999 && grossSalary <= 19999){(NHIFDeductions = 600);}
+    else if(grossSalary > 19999 && grossSalary <= 24999){(NHIFDeductions = 750);}
+    else if(grossSalary > 24999 && grossSalary <= 29999){(NHIFDeductions = 850);}
+    else if(grossSalary > 29999 && grossSalary <= 34999){(NHIFDeductions = 900);}
+    else if(grossSalary > 34999 && grossSalary <= 39999){(NHIFDeductions = 950);}
+    else if(grossSalary > 39999 && grossSalary <= 44999){(NHIFDeductions = 1000);}
+    else if(grossSalary > 44999 && grossSalary <= 49999){(NHIFDeductions = 1100);}
+    else if(grossSalary > 49999 && grossSalary <= 59999){(NHIFDeductions = 1200);}
+    else if(grossSalary > 59999 && grossSalary <= 69999){(NHIFDeductions = 1300);}
+    else if(grossSalary > 69999 && grossSalary <= 79999){(NHIFDeductions = 1400);}
+    else if(grossSalary > 79999 && grossSalary <= 89999){(NHIFDeductions = 1500);}
+    else if(grossSalary > 89999 && grossSalary <= 99999){(NHIFDeductions = 1600);}
+    else if(grossSalary > 99999){(NHIFDeductions = 1700);}
+    else {
+        NHIFDeductions = "Please enter a valid salary";
+    }
+    console.log("NHIFDeductions:", NHIFDeductions);
 
-   else if (grade > 60 && grade < 80){
-   console.log ("Grade is B");
- }
-
- else if ( grade > 50 && grade < 60){
- console.log ("Grade is C");
-}
-
- else if (grade > 40 && grade < 50){
- console.log ("Grade is D");
-}
-
- else if (grade < 39){
- console.log ("Grade is E");
-} 
-else {
-   ("please enter a valid number")
+    //calculates NSSF deductions.
+    let NSSFDeductions;
+    if(grossSalary > 0 && grossSalary <= 6000){NSSFDeductions = (grossSalary * 0.06);}
+    else if(grossSalary > 6000 && grossSalary <= 18000){NSSFDeductions = (360 + (grossSalary-6000) * 0.06);}
+    else if(grossSalary > 18000){NSSFDeductions = 1080;}
    
-}
-  
-}
-
-console.log((150));
-
-
- 
-
-
-
-
-// speedDetectorChallenge2
-//The purpose of the function is to check speed limit
-//and accord whether speed limit is ok and demerit points for overspeeding
-
-
- 
-function speedDetector(speed){
-
-    if(speed <= 70){
-        console.log("ok")
-    }
-
-    else if(speed > 70 && speed <= 130){
-        let demeritPoint = (speed-70)/5;
-        console.log(`points: ${demeritPoint}`);
-
-        }
-
+    console.log("NSSFDeductions:", NSSFDeductions);
+    const insuranceRelief = NHIFDeductions * 0.15;
+    const taxablePay = grossSalary - NSSFDeductions;
+    
+    //Calculates PAYE.
+    let PAYE;
+    if(taxablePay >= 0 && taxablePay <= 24000){
+        PAYE = ((taxablePay * 0.1) - personalRelief - insuranceRelief);}
+    else if(taxablePay > 24000 && taxablePay <= 32333){
+        PAYE = ((taxablePay-24000) * 0.25) + ((24000 * 0.1)) - personalRelief - insuranceRelief;}
+    else if(taxablePay > 32333){
+        PAYE = ((24000 * 0.1) + (8333 * 0.25) + ((taxablePay - 32333) * 0.3) - personalRelief - insuranceRelief);}
     else{
-        console.log("license suspended");
+        PAYE = "Enter a valid Salary";
     }
+    if (PAYE < 0){
+        PAYE = 0;
+    }
+    console.log("PAYE:", (Math.floor(PAYE)));
 
+    //calculates netSalary
+    netSalary = Math.floor(grossSalary-PAYE-NSSFDeductions-NHIFDeductions);
+    return netSalary;
 }
 
-
-speedDetector(150);
-
-
-
-//CHALLENGE 3 NET SALARY CALCULATOR
-// Function to calculate Net salary
-//This function calculates Net salary from gross salary
-
-
-
-function netSalaryCalculator(gs){
-  
-    if(gs >=0 && gs <= 10000){
-        console.log (10/100 * gs)
-    }
-
-    else if(gs >= 10000 && gs< 20000){
-        console.log (12/100 * gs)
-    }
-
-    else if(gs >= 20000 && gs < 40000 ){
-        console.log (14/100 * gs)
-    }
-
-    else if(gs >= 40000 && gs < 60000){
-        console.log (18/100 * gs)
-    }
-
-    else if(gs >= 60000 && gs < 80000){
-        console.log (20/100 * gs)
-    }
-
-    else if(gs >= 80000 && gs < 100000){
-        console.log (22/100 * gs)
-    }
-
-    else{
-        console.log (25/100 * gs)
-    }
-
-}
-
-netSalaryCalculator(5000);
-
+//Prints out the netSalary.
+console.log("netSalary:", (netSalaryCalculator()));
 
 
 

@@ -21,13 +21,17 @@ For example, if the speed is 80, it should print: “Points: 2”. If the driver
 ## CHALLENGE3 : NET SALARY CALCULATOR
 Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits. Calculate the payee (i.e. Tax), NHIFDeductions, NSSFDeductions, gross salary, and net salary. 
 
-## Installation
+## Instructions on running the code
 1. open terminal(ctrl+alt+t)
 2. git clone git@github.com:Knoxx04/Code-challenge.git
 3. cd Code-challenge
 4. code or atom depending on your text editor
-5. to access solutions to the challenges open index.js on your text editor
-6. Run the solutions in the debugging console
+5. To run code for the challenges open each file separately
+6. open the terminal
+7. npm install
+8. then run node(filename)e.g node speedDetector.js
+
+ 
 
 
 
